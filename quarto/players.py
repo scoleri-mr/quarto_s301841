@@ -11,7 +11,7 @@ from tqdm import tqdm
 
 class RLPlayer(Player):
     '''Reinforcement Learning Player'''
-    def __init__(self, quarto: Quarto, alfa = 0.1, gamma = 1, reward_coefficient = 1) -> None:
+    def __init__(self, quarto: Quarto, alfa = 1, gamma = 1, reward_coefficient = 100) -> None:
         super().__init__(quarto)
 
         #if the payer is in train mode it will update its Q-table

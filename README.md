@@ -2,6 +2,7 @@ Final project for the Masters' Degree course Computational Intelligence at Polit
 The goal of this project is to develop an agent able to play the game Quarto. Two approaches were considered: Reinforcement Learning and MinMax.
 
 # Table of Contents
+- [Usage](#usage)
 - [Reinforcement Learning Player](#reinforcement-learning-player)
     - [Reinforcement Learning parameters](#reinforcement-learning-parameters)
     - [Q-table](#q-table)
@@ -13,7 +14,29 @@ The goal of this project is to develop an agent able to play the game Quarto. Tw
     - [The choice of bound_value](#the-choice-of-bound_value)
     - [Heuristic](#heuristic)
     - [MinMax Results](#minmax-results)
+- [Collaboration](#collaboration)
 - [References](#references)
+
+# Usage
+To run the players on your device and play a game add the following lines to your main.py or notebook:
+```python
+import quarto
+
+#with the minmax player
+game = quarto.Quarto()
+random = quarto.RandomPlayer(game)
+minmax = quarto.MinMaxPlayer(game)
+game.set_players((random,minmax))
+winner = game.run()
+
+#with the reinforcement learning player
+game = quarto.Quarto()
+random = quarto.RandomPlayer(game)
+rl = quarto.RLPlayer(game)
+game.set_players((random,rl))
+winner = game.run()
+```
+The default parameters initialize the players with their best configurations.
 
 # Reinforcement Learning Player
 In this section we are going to explain the features and implementation choices that concern the Reinforcement Learning Player along with details that help understanding the code.  
@@ -110,6 +133,10 @@ After these trials we consider the STRATEGY 3 minmax to be our champion. The fin
 
 It's interesting to see that the minmax without randomness wins 18% of the games and loses 48%, randomness makes the player win twice the matches. In addition we can also see that the average turns is greater than 14 since we are using two players that are very close to optimal.
 
+# Collaboration
+The work contained in this folder has been discussed and developed in collaboration with:
+- Jonathan Damone (s301514)
+- Salvatore Licata (s295798)
 
 ## References
 1. [A flexible extended Quarto! implementation based on combinatorial analysis, Daniel Castro Silva and Vasco Vinhas, IADIS International Conference Gaming 2008](https://web.fe.up.pt/~niadr/PUBLICATIONS/2008/Gaming2008_DCS_VVM.pdf)
