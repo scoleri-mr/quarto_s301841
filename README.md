@@ -9,7 +9,7 @@ The goal of this project is to develop an agent able to play the game Quarto. Tw
     - [states-history](#states-history)
     - [Q-table update](#q-table-update)
     - [Reinforcement Learning Results](#reinforcement-learning-results)
-- [ Min Max Player](#min-max-player)
+- [Min Max Player -> Champion](#min-max-player---champion)
     - [Minmax strategies](#minmax-strategies)
     - [The choice of bound_value](#the-choice-of-bound_value)
     - [Heuristic](#heuristic)
@@ -18,6 +18,7 @@ The goal of this project is to develop an agent able to play the game Quarto. Tw
 - [References](#references)
 
 # Usage
+The best player for the tournament is the MinMax Player.  
 To run the players on your device and play a game add the following lines to your main.py or notebook:
 ```python
 import quarto
@@ -87,7 +88,7 @@ where:
 This player unfortunately does not perform as well as anticipated and only manages to be slightly better than a random player. With the best configuration found using the tuning the RL player can win around 60% of the matches against a random strategy.  
 Another drawback of this technique  is that the training requires around ten minutes and even loading an already full q-table can take up to a couple of minutes. Once the table is loaded the RL Player is as fast as the Random Player.
 
-# Min Max Player
+# Min Max Player -> Champion
 The best strategy to win at Quarto proves to be the Min Max. Due to the high complexity of the game, building a complete tree proved to be impossible. We implemented a min max strategy with different tecqniques that in the end allow us to win around 99.8% of the matches against a random player.  
 Our player can use three different strategies, uses a heuristic called Quarticity found in<sup>[1](#references)</sup>, and includes a tweaked random opening move. 
 
