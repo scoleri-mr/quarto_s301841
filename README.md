@@ -37,7 +37,8 @@ rl = quarto.RLPlayer(game)
 game.set_players((random,rl))
 winner = game.run()
 ```
-The default parameters initialize the players with their best configurations.
+The default parameters initialize the players with their best configurations.  
+**WARNING**: we could not modify the structure of the given objects.py but I had to use the `run` function to perform a very high number of tests. For this reason in my objects.py the **prints are commented**! This was the least invasive way to avoid printing when testing because I didn't have to add a verbose parameter to the run function. Please remember to uncomment the prints if you want to see a complete game and remember to re-comment them to perform a test (!) or your VSCode (or alternative) might crash.
 
 
 # Min Max Player -> Champion
@@ -132,7 +133,8 @@ where:
 
 ## Reinforcement Learning Results
 This player unfortunately does not perform as well as anticipated and only manages to be slightly better than a random player. With the best configuration found using the tuning the RL player can win around 60% of the matches against a random strategy.  
-Another drawback of this technique  is that the training requires around ten minutes and even loading an already full q-table can take up to a couple of minutes. Once the table is loaded the RL Player is as fast as the Random Player.
+Another drawback of this technique is that the training requires a few minutes (around 3 minutes for 1000 epochs) and loading an already full q-table can take up to twenty seconds. Once the table is loaded the RL Player is as fast as the Random Player.
+
 
 # Collaboration
 The work contained in this folder has been discussed and developed in collaboration with:
