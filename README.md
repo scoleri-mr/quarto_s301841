@@ -119,10 +119,8 @@ States-history is used to update the rewards of the states-actions that unroll d
 
 ## Q-table update
 Once the game is finished the function `update_q_table` is called. This function goes through the states-history in reversed order (so starting from the last state-action going backwards to the first) and updates the rewards of the states-actions of the game.  
-The function uses the Bellman equation:
-$$
-NewQ(s,a)=Q(s,a)+\alpha[R(s,a)+\gamma maxQ'(s',a')-Q(s,a)]
-$$
+The function uses the Bellman equation:  
+$NewQ(s,a)=Q(s,a)+\alpha[R(s,a)+\gamma maxQ'(s',a')-Q(s,a)]$  
 where:
 - $NewQ(s,a)$ is the updated value of the reward
 - $Q(s,a)$ is the current reward for this state-action found in the q-table (before the update)
