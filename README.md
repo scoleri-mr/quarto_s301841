@@ -38,7 +38,7 @@ game.set_players((random,rl))
 winner = game.run()
 ```
 The default parameters initialize the players with their best configurations.  
-**WARNING**: we could not modify the structure of the given objects.py but I had to use the `run` function to perform a very high number of tests. For this reason in my objects.py the **prints are commented**! This was the least invasive way to avoid printing when testing because I didn't have to add a verbose parameter to the run function. Please remember to uncomment the prints if you want to see a complete game and remember to re-comment them to perform a test (!) or your VSCode (or alternative) might crash.
+**WARNING**: in the run function of objects.py the **prints are commented**! Please remember to uncomment the prints if you want to see a complete game and remember to re-comment them to perform a test (!) or your VSCode (or alternative) might crash.
 
 
 # Min Max Player -> Champion
